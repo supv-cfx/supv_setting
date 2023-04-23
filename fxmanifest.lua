@@ -22,3 +22,5 @@ shared_scripts {
     'config.lua',
     'moduleHandlers.lua'
 }
+
+server_script 'version.lua'
