@@ -10,6 +10,7 @@ if supv.service == 'client' then
         dispatch = true,
         rewards = true,
         player = true,
+        pause_menu = true,
     }
 elseif supv.service == 'server' then
     return {
