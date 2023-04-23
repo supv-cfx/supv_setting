@@ -1,7 +1,7 @@
 local config <const> = require 'config.client.population'
 
 return function()
-    supv.updateCache('serverid', function(value)
+    supv.updateCache('playerid', function(value)
         SetRandomBoats(config.enable.boats)
         SetRandomTrains(config.enable.trains)
         SetGarbageTrucks(config.enable.garbage_truck)
