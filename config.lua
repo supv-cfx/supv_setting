@@ -6,11 +6,12 @@ if not supv then return end
 
 if supv.service == 'client' then
     return {
-        population = true,
-        dispatch = true,
-        rewards = true,
-        player = true,
-        pause_menu = true,
+        population      = true,
+        dispatch        = true,
+        rewards         = true,
+        player          = true,
+        pause_menu      = true,
+        relationship    = true,
     }
 elseif supv.service == 'server' then
     return {
