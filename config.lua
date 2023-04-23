@@ -15,6 +15,6 @@ if supv.service == 'client' then
     }
 elseif supv.service == 'server' then
     return {
-
+        entity_ceating  = true,
     }
 end
