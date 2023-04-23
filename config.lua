@@ -9,6 +9,7 @@ if supv.service == 'client' then
         population = true,
         dispatch = true,
         rewards = true,
+        player = true,
     }
 elseif supv.service == 'server' then
     return {
