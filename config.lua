@@ -7,7 +7,8 @@ if not supv then return end
 if supv.service == 'client' then
     return {
         population = true,
-        disptach = true,
+        dispatch = true,
+        rewards = true,
     }
 elseif supv.service == 'server' then
     return {
