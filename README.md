@@ -1,4 +1,4 @@
-# supv_setting (work in progress)
+# supv_setting (work in progress) don't use this resource for now please
 
 :fr:
 
