@@ -3,7 +3,7 @@ local config <const> = require 'config.client.relationship'
 if #config < 1 then return end
 
 return function()
-    Creathread(function()
+    CreateThread(function()
         for i = 1, #config do
             local r = config[i]
             if type(r.group1) == 'table' then

@@ -5,7 +5,7 @@ local function HideRadarInVehicle(task)
     if thread[task] then return end
     thread[task] = true
     local blacklisted, onActive = config.show_radar.vehicle, false
-    CreatThread(function()
+    CreateThread(function()
         while true do
             if not onActive and supv.cache.vehicle and not blacklisted[GetEntityModel(supv.cache.vehicle)] then
                 onActive = true
