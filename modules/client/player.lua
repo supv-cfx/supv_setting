@@ -34,14 +34,12 @@ end
 local function TurnOffCrossHit(task) -- await some update coming from supv_core
     if thread[task] then return end
     thread[task] = true
-    local sleep = 850
+    local sleep, controls = 850, supv.disable_control.new({140, 141, 142})
     CreateThread(function()
         while true do
             sleep = 850
             if supv.cache.weapon then sleep = 0
-                DisableControlAction(1, 140, true)
-                DisableControlAction(1, 141, true)
-                DisableControlAction(1, 142, true)
+                controls:play()
             end
             Wait(sleep)
         end
