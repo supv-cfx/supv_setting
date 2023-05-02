@@ -11,4 +11,5 @@ uses:
   - repo: SUP2Ak/supv_core
     ref: main
     release: latest
+    url: https://github.com/SUP2Ak/supv_core
 
