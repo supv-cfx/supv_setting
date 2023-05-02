@@ -12,5 +12,5 @@ updates:
     labels:
       - "dependencies"
     allow:
-      - dependency-name: "@sup2ak/supv_core"
+      - dependency-name: "@SUP2Ak/supv_core"
         dependency-type: "direct"
