@@ -8,7 +8,8 @@ description: >
   Un script qui permet de configurer la base de votre serveur (standalone)
 stage: live
 uses:
-  - repo: SUP2Ak/supv_core
+  - name: supv_core
+    repo: SUP2Ak/supv_core
     ref: main
     release: latest
     url: https://github.com/SUP2Ak/supv_core
