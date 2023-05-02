@@ -1,0 +1,14 @@
+name: supv_setting
+full_name: SUPV setting FiveM & RedM
+type: script
+owner_type: SUP2Ak
+status: active
+testable: true
+description: >
+  Un script qui permet de configurer la base de votre serveur (standalone)
+stage: live
+uses:
+  - repo: SUP2Ak/supv_core
+    ref: main
+    release: latest
+
