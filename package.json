@@ -2,6 +2,6 @@
   "name": "supv_setting",
   "version": "1.0.0",
   "dependencies": {
-    "@sup2ak/supv_core": "latest"
+    "@SUP2Ak/supv_core": "latest"
   }
 }
