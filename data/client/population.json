@@ -1,0 +1,14 @@
+{
+    "enable": {
+        "cops": true,
+        "boats": true,
+        "trains": true,
+        "garbage_truck": true
+    },
+    
+    "traffic": {
+        "npc": 3,
+        "vehicle": 3,
+        "parked": 3
+    }
+}

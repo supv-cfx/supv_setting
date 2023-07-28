@@ -1,0 +1,6 @@
+{
+    "blacklist": {
+        "rhino": true,
+        "hydra": true
+    }
+}

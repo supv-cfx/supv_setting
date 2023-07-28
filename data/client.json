@@ -1,0 +1,8 @@
+{
+    "dispatch": true,
+    "pause_menu": true,
+    "player": true,
+    "population": true,
+    "relationship": true,
+    "rewards": true
+}

@@ -1,0 +1,38 @@
+{
+    "afk_cam": true,
+    "cross_hit": true,
+    "can_do_drive_by": true,
+    "can_ragdoll": true,
+    "can_damaged_only_by_player": true,
+    "flags": {
+        "enable": true,
+        "list": [
+            {
+                "value": false,
+                "id": 35 
+            },
+            {
+                "value": true,
+                "enable": 439
+            }
+        ]
+    },
+    "hide_hud": {
+        "enable": false,
+        "list": [3,4,6,7,8,9,13,14],
+        "scope_list": {
+            "WEAPON_SNIPERRIFLE": true,
+            "WEAPON_HEAVYSNIPER": true,
+            "WEAPON_MARKSMANRIFLE": true,
+            "WEAPON_MARKSMANRIFLE_MK2": true,
+            "WEAPON_HEAVYSNIPER_MK2": true
+        }
+    },
+    "show_radar": {
+        "type": true,
+        "vehicle": {
+            "bmx": true,
+            "sanchez": true
+        }
+    }
+}
