@@ -1,8 +1,5 @@
-local config <const> = require 'config.client.relationship'
-
-if #config < 1 then return end
-
-return function()
+return function(config)
+    if #config < 1 then return end
     CreateThread(function()
         for i = 1, #config do
             local r = config[i]

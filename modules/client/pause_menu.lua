@@ -1,6 +1,6 @@
-local config <const> = require 'config.client.pause_menu'
+local AddTextEntry <const> = AddTextEntry
 
-return function()
+return function(config)
     CreateThread(function()
         for k,v in pairs(config) do
             AddTextEntry(k, v)

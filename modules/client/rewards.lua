@@ -1,6 +1,4 @@
-local config <const> = require 'config.client.rewards'
-
-return function()
+return function(config)
     if not config.vehicle.enable then
         local max <const>, timer = 5000
 
@@ -12,9 +10,13 @@ return function()
             end
         end
     
+        local list = {}
+        for k,v in pairs(config.vehicle.list) do
+            list[joaat(k)] = v
+        end
         CreateThread(function()
             while true do
-                if config.vehicle.list[GetEntityModel(GetVehiclePedIsTryingToEnter(supv.cache.ped))] then
+                if list[GetEntityModel(GetVehiclePedIsTryingToEnter(supv.cache.ped))] then
                     ForceRemove()
                 end
                 Wait(500)
@@ -23,7 +25,7 @@ return function()
     end
 
     if not config.npc.enable then
-        supv.updateCache('playerid', function(value)
+        supv.onCache('playerid', function(value)
             for i = 1, #config.npc.list do
                 local pickup = config.npc.list[i]
                 ToggleUsePickupsForPlayer(value, pickup, false)

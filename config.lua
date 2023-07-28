@@ -3,18 +3,14 @@
     en: To turn on module(s), config module you activate in config folder
 --]]
 if not supv then return end
+local ResourceManager <const> = true
 
 if supv.service == 'client' then
-    return {
-        population      = true,
-        dispatch        = true,
-        rewards         = true,
-        player          = true,
-        pause_menu      = true,
-        relationship    = true,
-    }
+    return supv.json.load 'data.client'
 elseif supv.service == 'server' then
     return {
-        entity_ceating  = true,
+        server = supv.json.load 'data.server',
+        client = supv.json.load 'data.client',
+        rm = ResourceManager
     }
 end

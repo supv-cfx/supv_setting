@@ -1,3 +1,5 @@
+--return supv.load.json
+
 return { -- https://docs.fivem.net/natives/?_0xDC0F817884CDD856
     -- true = active dispatch (default value), false = desactive dispatch
     [0]     = true, -- unknow refer to fivem documentation

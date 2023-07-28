@@ -1,7 +1,8 @@
-local config <const> = require 'config.client.dispatch'
+local EnableDispatchService <const> = EnableDispatchService
+local BlockDispatchServiceResourceCreation <const> = BlockDispatchServiceResourceCreation
 
-return function()
-    supv.updateCache('ped', function(value)
+return function(config)
+    supv.onCache('ped', function(value)
         for i = 0, #config do
             local v = config[i]
             EnableDispatchService(v, i)

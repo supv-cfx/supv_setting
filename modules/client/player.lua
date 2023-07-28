@@ -1,10 +1,23 @@
-local config <const> = require 'config.client.player'
+local DisplayRadar <const> = DisplayRadar
+local GetEntityModel <const> = GetEntityModel
+local InvalidateIdleCam <const> = InvalidateIdleCam
+local InvalidateVehicleIdleCam <const> = InvalidateVehicleIdleCam
+local IsHudComponentActive <const> = IsHudComponentActive
+local HideHudComponentThisFrame <const> = HideHudComponentThisFrame
+local SetPlayerCanDoDriveBy <const> = SetPlayerCanDoDriveBy
+local SetPedCanRagdoll <const> = SetPedCanRagdoll
+local SetEntityOnlyDamagedByPlayer <const> = SetEntityOnlyDamagedByPlayer
+local SetPedConfigFlag <const> = SetPedConfigFlag
+
 local thread = {}
 
-local function HideRadarInVehicle(task)
+local function HideRadarInVehicle(config, task)
     if thread[task] then return end
     thread[task] = true
-    local blacklisted, onActive = config.show_radar.vehicle, false
+    local blacklisted, onActive = {}, false
+    for k, v in pairs(config.show_radar.vehicle) do
+        blacklisted[joaat(k)] = v
+    end
     CreateThread(function()
         while true do
             if not onActive and supv.cache.vehicle and not blacklisted[GetEntityModel(supv.cache.vehicle)] then
@@ -46,7 +59,7 @@ local function TurnOffCrossHit(task) -- await some update coming from supv_core
     end)
 end
 
-return function()
+return function(config)
     if not config.afk_cam then
         StopAfkCam('cam')
     end
@@ -57,7 +70,7 @@ return function()
 
     if type(config.show_radar.type) == 'string' and config.show_radar.type == 'vehicle' then
         DisplayRadar(false)
-        HideRadarInVehicle('radar')
+        HideRadarInVehicle(config, 'radar')
     end
 
     if config.hide_hud.enable then
@@ -82,12 +95,12 @@ return function()
         end)
     end
 
-    supv.updateCache('playerid', function(value)
+    supv.onCache('playerid', function(value)
         SetPlayerCanDoDriveBy(value, config.can_do_drive_by)
         if type(config.show_radar.type) == 'boolean' then DisplayRadar(config.show_radar.type) end
     end)
 
-    supv.updateCache('ped', function(value)
+    supv.onCache('ped', function(value)
         SetPedCanRagdoll(value, config.can_ragdoll)
         SetEntityOnlyDamagedByPlayer(value, config.can_damaged_only_by_player)
         if config.flags.enable then
