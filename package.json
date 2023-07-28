@@ -1,7 +1,0 @@
-{
-  "name": "supv_setting",
-  "version": "1.0.0",
-  "dependencies": {
-    "@SUP2Ak/supv_core": "latest"
-  }
-}
